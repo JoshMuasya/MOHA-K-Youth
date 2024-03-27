@@ -3,15 +3,16 @@ import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 import { getAuth } from "firebase/auth";
+require('dotenv').config();
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCKrILy19U55y4BLITFSzX4ppHX-xUjnz0",
-    authDomain: "moha-k-youth-app.firebaseapp.com",
-    projectId: "moha-k-youth-app",
-    storageBucket: "moha-k-youth-app.appspot.com",
-    messagingSenderId: "35805656769",
-    appId: "1:35805656769:web:e8138aac65c9247deb4640",
-    measurementId: "G-N9D3XPZVBF"
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    projectId: process.env.PROJECT_ID,
+    storageBucket: process.env.STORAGE_BUCKET,
+    messagingSenderId: process.env.MESSAGING_SENDER_ID,
+    appId: process.env.APP_ID,
+    measurementId: process.env.MEASUREMENT_ID
 };
 
 const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
